@@ -1,16 +1,23 @@
-﻿@model IEnumerable<OnlineShoppingStore.Domain.Entities.Product>
+﻿@model OnlineShoppingStoreWebUI.Models.ProductsListViewModel
 
 @{
     ViewBag.Title = "Products";
 }
 
-@foreach(var p in Model)
+@foreach(var p in Model.Products)
 {
     <div>
         <h3>@p.Name</h3>
         <h3>@p.Category</h3>
         <h4>@p.Price.ToString("c")</h4>
         @p.Description
+        
     </div>
 }
+
+<div>
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x}))
+
+    @*Error happen but you can run*@
+</div>
 
