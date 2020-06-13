@@ -10,6 +10,7 @@ namespace OnlineShoppingStoreWebUI.Controllers
     public class ProductController : Controller
     {
         private readonly IProductRepository repository;
+ 
         public ProductController(IProductRepository repo)
         {
             repository = repo;
